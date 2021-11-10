@@ -1,0 +1,337 @@
+/* eliminating all element's default paddings */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+  }
+  
+  /* general modifiers */
+  .background--whitesmoke {
+    background-color: rgb(245, 245, 245);
+  }
+  
+  .border--none {
+    border: none;
+  }
+  
+  .btn--background_color_blue {
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px;
+  }
+  
+  .btn--background_color_blue:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
+  
+  .btn--gray {
+    border: none;
+    padding: 5px;
+    background-color: rgb(128, 128, 128);
+    color: rgb(255, 255, 255);
+  }
+  
+  .btn--gray:hover {
+    background-color: rgb(42, 42, 42);
+    cursor: pointer;
+  }
+  
+  .btn--gray--active {
+    background-color: rgb(42, 42, 42);
+  }
+  
+  .select--style,
+  .edit_subject--style {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 6px;
+  }
+  
+  .select--style:hover {
+    cursor: pointer;
+  }
+  
+  /* element styles */
+  .niagara_simulator--style {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .full_widget--style {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .top_bar--style {
+    display: flex;
+    justify-content: end;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .top__button_wrapper--style {
+    margin-right: 5%;
+  }
+  
+  .filter__container_wrapper--style {
+    /* display: none; */
+    visibility: hidden;
+  }
+  
+  .filter__container_wrapper--show {
+    /* display: block; */
+    visibility: visible;
+  }
+  
+  .filter__container--style {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: space-around;
+    padding: 1% 2% 0 2%;
+  }
+  
+  .filter__search__header_wrapper--style {
+    padding: 0.5%;
+    border-bottom: solid 1px rgb(214, 214, 214);
+  }
+  
+  .search__header--style {
+    font-size: 18px;
+  }
+  
+  .filter__options_wrapper--style {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% 0 1% 0;
+  }
+  
+  .filter__select_wrappers {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5%;
+  }
+  
+  .filter__options_wrapper--style > button {
+    margin: 0.5%;
+  }
+  
+  .write_msg_container__wrapper--style,
+  .edit_wrapper {
+    display: none;
+    position: absolute;
+    z-index: 50;
+  }
+  
+  .show_msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .write_msg_container--style,
+  .edit__container--style {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    border: solid 5px rgb(255, 255, 255);
+    border-radius: 8px;
+  }
+  
+  .write_msg__form--style,
+  .edit_form--style {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .write_msg__form__header_wrapper--style,
+  .edit__form__header_wrapper--style {
+    padding: 1%;
+    border-bottom: solid 1px rgb(214, 214, 214);
+  }
+  
+  /* .write_msg__form__header--style, .edit__form__header--style {
+    font-weight: 700;
+  } */
+  
+  .write_msg__select_label--style,
+  .write_msg__textarea__label--style,
+  .edit__subject_label--style,
+  .edit__text_area__label--style {
+    padding: 1%;
+    font-size: 18px;
+  }
+  
+  .write_msg__select_wrapper--style,
+  .edit__select_wrapper--style {
+    margin-top: 4%;
+  }
+  
+  .write_msg__textarea_wrapper--style,
+  .edit__textarea_wrapper--style {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+  }
+  
+  .write_msg__textarea--style,
+  .edit_message--style {
+    padding: 1%;
+    font-size: 15px;
+  }
+  
+  /* Following CSS class is to be removed when user_name input is removed */
+  .user_name__label--style {
+    margin-top: 4%;
+    padding: 1%;
+    font-size: 18px;
+  }
+  
+  .write_msg__button_wrapper--style,
+  .edit__button_wrapper--style {
+    margin-top: 4%;
+  }
+  
+  /* styling for chat messages */
+  #chat_container {
+    height: 500px;
+    overflow: scroll;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    background-color: rgb(219, 219, 217);
+  }
+  
+  .message__wrapper--style {
+    margin-top: 20px;
+    padding: 10px;
+    width: 50vw;
+    border-radius: 8px;
+  }
+  
+  .moment_div {
+    display: flex;
+  }
+  
+  .date_div {
+    font-weight: 700;
+  }
+  
+  .time_div {
+    font-weight: 700;
+    margin-left: 5px;
+  }
+  
+  .text_div--style {
+    min-height: 15vh;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .message__menu_btn--style {
+    width: 1vw;
+    height: 3vh;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: none;
+  }
+  
+  .menu__image--style {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .button_wrapper--style {
+    display: none;
+    justify-content: space-between;
+  }
+  
+  .button_wrapper--active {
+    display: flex;
+  }
+  
+  .user_wrapper {
+    margin-left: 5px;
+  }
+  
+  .name_wrapper {
+    font-weight: 700;
+  }
+  
+  .delete__btn--style {
+    margin-left: 3px;
+  }
+  
+  .message__footer_wrapper--style {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1%;
+  }
+  
+  /* gray overlay that covers the entire document and inhibit interaction */
+  .edit_overlay--style {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    cursor: pointer;
+  }
+  
+  /* activates overlay */
+  .edit_overlay--show {
+    display: block;
+  }
+  
+  /* Div to position content in the center. This div covers the entire page */
+  .edit__outer_wrapper {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Activates edit_outer_wrapper */
+  .outer_wrapper--flex {
+    display: flex;
+  }
+  
+  /* Activates edit message field */
+  .edit_wrapper--show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .source__container--style {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+  }
+  

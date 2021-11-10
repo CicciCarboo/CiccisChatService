@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyChatService</title>
+    <link href="styles.css" rel="stylesheet" media="screen" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="niagara_simulator" class="niagara_simulator--style">
+      <div id="full_widget_id" class="full_widget--style">
+        <div id="top_bar" class="top_bar--style">
+          <!-- <h1>My Chat Service</h1> -->
+          <div id="top__button_wrapper" class="top__button_wrapper--style">
+            <button id="new_msg_btn" class="btn--background_color_blue">
+              Skriv nytt meddelande
+            </button>
+            <button id="toggle_filters" class="btn--background_color_blue">
+              Visa filter
+            </button>
+            <button id="refresh_btn" class="btn--background_color_blue">
+              Uppdatera sidan
+            </button>
+          </div>
+        </div>
+        <div
+          id="filter__container_wrapper"
+          class="filter__container_wrapper--style"
+        >
+          <div
+            id="filter__container"
+            class="filter__container--style background--whitesmoke"
+          >
+            <div
+              id="filter__search__header_wrapper"
+              class="filter__search__header_wrapper--style"
+            >
+              <h2 id="search__header" class="search__header--style">
+                Sök efter tidigare meddelanden
+              </h2>
+            </div>
+            <div
+              id="filter__options_wrapper"
+              class="filter__options_wrapper--style"
+            >
+              <div id="filter__subject_wrapper" class="filter__select_wrappers">
+                <label
+                  for="filter__subject_select"
+                  class="select__labels--style"
+                  >Välj kategori</label
+                >
+                <select
+                  id="filter__subject_select"
+                  name="filter__subject_select"
+                  class="select--style border--none"
+                >
+                  <option disabled selected value>Kategori</option>
+                  <option id="filter__subject_all_messages" value="Alla">
+                    Alla meddelanden
+                  </option>
+                  <option id="filter__subject_heat" value="Värme">Värme</option>
+                  <option id="filter__subject_cooling" value="Kyla">
+                    Kyla
+                  </option>
+                  <option id="filter__subject_ventilation" value="Ventilation">
+                    Ventilation
+                  </option>
+                  <option id="filter__subject_general" value="Allmänt">
+                    Allmänt
+                  </option>
+                </select>
+              </div>
+              <div id="filter__user_wrapper" class="filter__select_wrappers">
+                <label for="filter__user_select">Välj person/grupp</label>
+                <select
+                  id="filter__user_select"
+                  name="filter__user_select"
+                  class="select--style border--none"
+                >
+                  <option disabled selected value>Person/grupp</option>
+                  <option id="filter__user_all_messages" value="Alla">
+                    Alla meddelanden
+                  </option>
+                </select>
+              </div>
+              <button id="filter__day_btn" class="btn--gray">
+                Senaste dygnet
+              </button>
+              <button id="filter__week_btn" class="btn--gray">
+                Senaste veckan
+              </button>
+              <button id="filter__month_btn" class="btn--gray">
+                Senaste månaden
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="edit_overlay" class="edit_overlay--style"></div>
+        <div id="edit__outer_wrapper" class="edit__outer_wrapper">
+          <div
+            id="write_msg_container__wrapper"
+            class="write_msg_container__wrapper--style"
+          >
+            <div
+              id="write_msg_container"
+              class="write_msg_container--style background--whitesmoke"
+            >
+              <form
+                id="write_msg__form"
+                class="write_msg__form--style background--whitesmoke"
+              >
+                <div
+                  id="write_msg__form__header_wrapper"
+                  class="write_msg__form__header_wrapper--style"
+                >
+                  <h2
+                    id="write_msg__form__header"
+                    class="write_msg__form__header--style"
+                  >
+                    Lämna ett meddelande
+                  </h2>
+                </div>
+                <div
+                  id="write_msg__select_wrapper"
+                  class="write_msg__select_wrapper--style"
+                >
+                  <label
+                    for="chat_subject"
+                    class="write_msg__select_label--style"
+                    >Välj kategori:</label
+                  >
+                  <select
+                    id="chat_subject"
+                    name="chat_subject"
+                    class="select--style border--none"
+                    required
+                  >
+                    <option disabled selected value>Kategori</option>
+                    <option id="chat__subject_heat" value="Värme">Värme</option>
+                    <option id="chat__subject_cooling" value="Kyla">
+                      Kyla
+                    </option>
+                    <option id="chat_subject_ventilation" value="Ventilation">
+                      Ventilation
+                    </option>
+                    <option id="subject_general" value="Allmänt">
+                      Allmänt
+                    </option>
+                  </select>
+                </div>
+                <div
+                  id="write_msg__textarea_wrapper"
+                  class="write_msg__textarea_wrapper--style"
+                >
+                  <label
+                    id="write_msg__textarea__label"
+                    for="write_msg__textarea"
+                    class="write_msg__textarea__label--style"
+                    >Chatmeddelande:</label
+                  >
+                  <textarea
+                    id="write_msg__textarea"
+                    name="write_msg__textarea"
+                    placeholder="Skriv ditt meddelande här...."
+                    rows="8"
+                    cols="35"
+                    maxlength="250"
+                    class="write_msg__textarea--style border--none"
+                    required
+                  ></textarea>
+                </div>
+                <label for="user_name" class="user_name__label--style"
+                  >Signatur:</label
+                >
+                <input
+                  id="user_name"
+                  placeholder="Användarnamn..."
+                  class="border--none"
+                  required
+                />
+                <div
+                  id="write_msg__button_wrapper"
+                  class="write_msg__button_wrapper--style"
+                >
+                  <button
+                    id="write_msg_submit_btn"
+                    class="btn--background_color_blue"
+                    type="submit"
+                  >
+                    Sänd
+                  </button>
+                  <button
+                    id="write_msg_reset_btn"
+                    class="btn--gray"
+                    type="reset"
+                  >
+                    Stäng
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="edit_wrapper" class="edit_wrapper">
+            <div
+              id="edit__container"
+              class="edit__container--style background--whitesmoke"
+            >
+              <form
+                id="edit_form"
+                class="edit_form--style background--whitesmoke"
+              >
+                <div
+                  id="edit__form__header_wrapper"
+                  class="edit__form__header_wrapper--style"
+                >
+                  <h2 id="edit__form__header" class="edit__form__header--style">
+                    Redigera ditt meddelande
+                  </h2>
+                </div>
+                <div
+                  id="edit__select_wrapper"
+                  class="edit__select_wrapper--style"
+                >
+                  <label
+                    id="edit__subject_label"
+                    for="edit_subject"
+                    class="edit__subject_label--style"
+                    >Kontrollera rätt kategori:</label
+                  >
+                  <select
+                    id="edit_subject"
+                    name="edit_subject"
+                    class="edit_subject--style border--none"
+                    required
+                  >
+                    <option disabled selected value>Välj kategori</option>
+                    <option id="edit__subject_heat" value="Värme">Värme</option>
+                    <option id="edit__subject_cooling" value="Kyla">
+                      Kyla
+                    </option>
+                    <option id="edit__subject_ventilation" value="Ventilation">
+                      Ventilation
+                    </option>
+                    <option id="edit__subject_general" value="Allmänt">
+                      Allmänt
+                    </option>
+                  </select>
+                </div>
+                <div
+                  id="edit__textarea_wrapper"
+                  class="edit__textarea_wrapper--style"
+                >
+                  <label
+                    for="edit_message"
+                    id="edit__text_area__label"
+                    class="edit__text_area__label--style"
+                    >Ditt gamla meddelande:</label
+                  >
+                  <textarea
+                    id="edit_message"
+                    name="edit_message"
+                    rows="8"
+                    cols="35"
+                    maxlength="250"
+                    class="edit_message--style border--none"
+                    contenteditable
+                    required
+                  ></textarea>
+                </div>
+                <div
+                  id="edit__button_wrapper"
+                  class="edit__button_wrapper--style"
+                >
+                  <button
+                    id="edit_submit_btn"
+                    class="btn--background_color_blue"
+                    type="submit"
+                  >
+                    Sänd
+                  </button>
+                  <button id="edit_reset_btn" class="btn--gray" type="reset">
+                    Stäng
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="chat_container" class="background--whitesmoke"></div>
+        <div
+          id="source__container"
+          class="source__container--style background--whitesmoke"
+        >
+          <h2>by Cicci Carboo</h2>
+          <a href="https://fontawesome.com/v5.15/icons/ellipsis-v?style=solid"
+            >Bildkälla</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
